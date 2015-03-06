@@ -107,7 +107,7 @@ main:
     j dispatch_restore
 
 handler:
-    # Check if timer cased this interrupt, if not pass on
+    # Check if timer caused this interrupt, if not pass on
     movsg $13, $estat
     andi $13, $13, 0x40     # mask IRQ2 (timer interrupt)
     beqz $13, handler_pass_on
